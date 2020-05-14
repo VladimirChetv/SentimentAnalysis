@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Sentiment Demo</title>
+<form action="{{ url_for('hello') }}" method=post>
+    <dl>
+        <dt>Введите отзыв на фильм (поддерживается только английский язык): <br>
+        <dd><textarea name=text rows=15 cols=80>{{ text }}</textarea>
+        <dd><input type=submit value="Оценить">
+    </dl>
+</form>
+
+<br>Sentiment prediction:<br>
+{{ prediction_message }}
