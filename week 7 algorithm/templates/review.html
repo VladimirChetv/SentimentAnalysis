@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Демонстрация анализа тональности отзывов
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <p class="lead"><form action="{{ url_for('review') }}" method=post>
+        <dl>
+            <dd>Введите отзыв на мобильный телефон (поддерживается только русский язык): <br>
+            <dd><textarea name=text rows=10 cols=100>{{ text }}</textarea>
+            <dd><input type=submit value="Оценить">
+        </dl>
+    </form>
+    </p>
+
+    <br>Результат предсказания:<br>
+    {{ prediction_message }}
+</div>
+{% endblock %}
